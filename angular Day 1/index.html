@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>angular</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body ng-app>
+	
+	<div ng-controller="MyFirstController">
+
+		<h1>Hello MOm</h1>
+		<p>{{5 + 5}}</p>
+		<!-- Scope is implied in socpe.myVar -->
+		<p>{{myVar}}</p>
+		<!-- The ng-Click is like an onclick function with angular -->
+		<button ng-click="myClickFunction()">{{ counter }}</button>
+
+		<p>
+		
+			<!-- ng-model   -->
+		<input type="text" ng-model="msg"/>
+
+		</p>
+		<p> You Said: {{ msg }}</p>
+		<p>
+			<ol>
+				
+				<li ng-repeat="item in myArray track by $index"> 
+					{{ item }}  
+					<a ng-click="removeItemAct($index)">[x]</a>
+				</li>
+			</ol>
+
+		</p>
+
+		<form ng-submit="addItem()">
+		
+
+		<input type="text" ng-modal="itemInput"/>
+		<button type="submit">Click</button>
+
+		</form>
+	
+
+	<div>
+
+</body>
+</html>

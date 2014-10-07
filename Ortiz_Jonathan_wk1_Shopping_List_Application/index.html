@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Shopping List</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href='http://fonts.googleapis.com/css?family=Walter+Turncoat' rel='stylesheet' type='text/css'>
+	 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</head>
+<style type="text/css">
+	
+	p{
+
+		text-decoration:underline;
+		font-size:24px;
+		font-family: 'Walter Turncoat', cursive;
+
+	}
+
+</style>
+<body ng-app>
+
+	<header>
+		
+		<ul>
+			<li><a href="">Contact Us</a></li>
+			<li><a href="">Sign-Up</a></li>
+			<li><a href="">Login</a></li>
+		</ul>
+	</header>
+
+	<div ng-controller="ShoppingListController" id="wrapper">
+
+		<h1> Shopping List </h1>
+
+		<ol>
+			<!--Add Div-->
+			<div id="itemContainer">
+				<li ng-repeat="item in ShoppingListArray track by $index">
+					<p id="item" ng-style="myStyle">{{ item }}</p>
+					<button ng-click="removeStudent()">Remove</button>
+					<input type="checkbox" value="checkOff" id="check" ng-click="myStyle={'text-decoration':'line-through'}" />
+				</li>
+			</div>
+		</ol>
+
+		<form ng-submit="addToList()">
+
+			<input   type="text" ng-model="inputItem"/>
+			<button  type="submit">Add</button>			
+
+		</form>
+
+	</div>
+	<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="js/jquery.js"></script>
+</body>
+</html>

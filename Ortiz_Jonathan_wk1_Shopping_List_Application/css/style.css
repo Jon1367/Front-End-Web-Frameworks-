@@ -1,0 +1,81 @@
+body{
+
+	margin:0;
+	padding:0;
+}
+.right{
+
+	float:right;
+}
+.left{
+
+	float:left;
+}
+.clear{
+
+	clear:both;
+}
+header{
+
+	width:100%;
+	background-color:#3F8C34;
+	overflow:hidden;
+}
+ul{
+	float:right;
+	margin-right:5px;
+	padding:5px;
+	margin-top:10px;
+	margin-bottom:10px;
+}
+ul li{
+
+	
+	font-size:14px;
+	display:inline-block;
+	float:left;
+	margin-left: 8px;
+	color:white;
+}
+ul li a{
+
+	color:black;
+	text-decoration:none;
+}
+ul li a:hover{
+
+	color:white;
+}
+#itemContainer{
+
+	width:400px;
+	
+}
+
+#wrapper{
+
+	width:600px;
+	background-color:#F8ECC2;
+	margin:0 auto;
+	margin-top:20px;
+	border-radius:15px;
+	overflow:hidden;
+}
+div ol{
+
+	width:300px;
+	margin:0 auto;
+}
+
+div h1{
+
+	text-align:center;
+	color:#242424;
+	font-family: 'Walter Turncoat', cursive;
+	text-decoration:underline;
+}
+form{
+
+	width:300px;
+	margin: 0 auto;
+}

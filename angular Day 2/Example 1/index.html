@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angular Day 2</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</head>
+<body>
+	<div ng-app="MyAwesomeApp" ng-controller="MyController">
+	<h1> Another Contrived Demo Application</h1>
+	<form ng-submit="">
+		<label for="studentName">
+			<input type="text" id="studentName" ng-model="nameInput">
+		</label>
+		<label for="studentGrade">
+			<select ng-model="gradeInput">
+				<option value="A">A</option>
+				<option value="B">B</option>
+				<option value="C">C</option>
+				<option value="D">D</option>
+				<option value="F">F</option>
+			</select>
+		</label>
+		<button type="submit">Submit</button>
+	</form>
+		
+	<div>
+		<ul>
+			<li ng-repeat="student in studentArray track by $index">
+				
+				<h4>{{ student.name }}</h4>
+				<p> {{ student.grade }}</p>
+				<button ng-click="removeStudent()">Destroy Student</button>
+			</li>
+		</ul>
+	</div>
+
+
+
+	</div>
+	
+</body>
+</html>
