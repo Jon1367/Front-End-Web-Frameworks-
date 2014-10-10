@@ -1,7 +1,11 @@
-$('#check').on('click',function  () {
+$('#check').on('change',function  () {
 	// body...
 
-	$('#item').css('text-decoration','line-through');
+	toggle(function(){
+
+		$('#item').css('text-decoration','line-through');
+
+	})
 
 
 })

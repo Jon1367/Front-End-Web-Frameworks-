@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Angualr Day 3</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.26/angular.min.js"></script>
+	<script type="js/main.js"></script>
+</head>
+<body ng-app="Day3App" ng-controller="PrimaryController">
+
+	<form ng-submit="addItem()">
+		
+		<label for="teamNameTxt">
+		Team Name:
+			<input type="text" id="teamNameTxt" ng-model="teamNameInput"/>
+		</label>
+
+		<label for="teamCityTxt">
+		Team's Home City:
+			<input type="text" id="teamCityTxt" ng-model="teamCityInput"/>
+		</label>
+
+		<label for="teamIsActive">
+			currently Active
+			<input type="text" id="teamIsActive" ng-model="teamIsActiveInput"/>
+		</label>
+
+		<button type="submit">save</button>
+
+	</form>
+	
+	<div style="border:1px solid black; width:100%; margin-top:10px; float:left; clear:both;">
+		<div style="background:#dedede; witdth:250px; height:150px; float:left; margin:5px;">asdf</div>
+
+				<h3>{{ teamObj.name }}</h3>
+				<p>{{  teamObj.city }}</p>
+				<p>{{ (teamObj.isActive)? 'Currently Active':'Currently Inactive' }}</p>
+	</div>
+
+	
+</body>
+</html>

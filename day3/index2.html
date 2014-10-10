@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script type="text/javascript" src="js/app2.js"></script>
+    <script type="text/javascript" src="js/services2.js"></script>
+</head>
+
+
+<body ng-app="Day3App" ng-controller="PrimaryController" class="ng-scope ng-binding">
+
+<div>
+
+    <form ng-submit="addItem()">
+
+        <label for="teamNameTxt">
+        <input type="text" id="teamNameTxt" ng-model="teamNameInput"/>
+        </label>
+
+        <label for="teamCityTxt">
+            <input type="text" id="teamCityTxt" ng-model="cityInput"/>
+        </label>
+        <label for="teamIsActive">
+            Currently Active
+            <input type="checkbox" id="teamIsActive" ng-model="teamIsActiveInput"/>
+        </label>
+
+        <button type="submit" >Save</button>
+    </form>
+        <div style="border: 1px black solid; width: 100%;margin-top:10px; float:left; clear:both;">
+            <div ng-repeat="teamObj in teamArray track by $index" style="background: #dedede;width:250px; height:150px; float:left; clear:both;">
+                <button ng-click="removeItem($index)">X</button>
+                <h3>{{teamObj.name}}</h3>
+                <p>{{teamObj.city}}</p>
+                <p>{{ (teamObj.isActive?'currently Active':"Currently Inactive") }}</p>
+
+            </div>
+
+        </div>
+
+</div>
+
+</body>
+</html>

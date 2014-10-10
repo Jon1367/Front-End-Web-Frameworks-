@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/services.js"></script>
+    <script src="js/vendor/modernizr.js"></script>
+    <link rel="stylesheet" href="css/foundation.css" />
+
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body ng-app="RestaurantApp" ng-controller="RestaurantController">
+
+<div class="sticky">
+    <nav class="top-bar" data-topbar="" role="navigation" data-options="sticky_on: large">
+        <ul class="title-area">
+            <!-- Title Area -->
+            <li class="name">
+                <h1><a href="#">restaurantAwesome</a></h1>
+            </li>
+            <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+            <li class="toggle-topbar menu-icon" ><a href="#" ><span></span></a></li>
+        </ul>
+
+
+        <section class="top-bar-section">
+
+            <!-- Right Nav Section -->
+            <ul class="right">
+                <li class="divider hide-for-small"></li>
+                <li><a href="#" data-reveal-id="myModal">Cart <span id="demo"></span> </a></li>
+
+            </ul>
+        </section></nav>
+</div>
+
+
+
+<div class="row">
+    <form ng-submit="OnMenuSubmit()">
+
+            <b>Type Menu Item Here:</b>
+
+            <p>
+                <label for="itemInput">Price Of Item</label>
+                <input type="text" id="itemInput" placeholder="Price Of Item" ng-model="PriceInput" >
+            </p>
+            <p>
+                <label for="nameInput">Name Of Item</label>
+                <input type="text" id="nameInput" placeholder="Name Of Item" ng-model="nameInput" >
+            </p>
+            Category:
+            <select ng-model="CategoryInput">
+                <option value="" selected></option>
+                <option value="Italian">Italian</option>
+                <option value="American">American</option>
+                <option value="Chinese">Chinese</option>
+                <option value="Mexican">Mexican</option>
+                <option value="Taco Bell">Taco Bell</option>
+            </select>
+
+
+
+        <button type="submit" class="btn">Add +</button>
+    </form>
+
+    <div>
+
+    </div>
+
+</div>
+
+
+<div id="myModal" class="reveal-modal" data-reveal >
+<h2>Items In Menu</h2>
+    <ul>
+        <li style="float:left; margin-right:35px;" ng-repeat="menu in RestaurantArray track by $index">
+
+            <h3>{{ menu.name }}</h3>
+            <h4>{{ menu.price }}</h4>
+            <h4>{{menu.category}}</h4>
+
+
+            <button ng-click="removeMenu($index)">DESTROY!</button>
+        </li>
+    </ul>
+
+    <a class="close-reveal-modal">&#215;</a>
+</div>
+
+
+<script src="js/vendor/jquery.js"></script>
+<script src="js/foundation.min.js"></script>
+<script>
+    $(document).foundation();
+</script>
+</body>
+</html>
