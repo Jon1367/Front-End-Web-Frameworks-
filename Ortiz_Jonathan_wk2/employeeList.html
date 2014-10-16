@@ -1,0 +1,10 @@
+
+<div id="list">
+<h1>Recipe Book</h1>
+
+        <ul>
+            <li ng-repeat="recipeInput in recipeArray track by $index">
+                <a href="#/details/{{$index}}">{{recipeInput.name}}</a>
+            </li>
+        </ul>
+</div>

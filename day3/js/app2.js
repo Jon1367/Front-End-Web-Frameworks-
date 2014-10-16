@@ -5,7 +5,7 @@
 angular.module("Day3App", [])
     .controller("PrimaryController",function($scope,MyService){
 
-//        $scope.test= "Huzzah"
+        //$scope.test= "Huzzah"
 
         $scope.teamNameInput ='';
         $scope.cityInput='';
@@ -16,18 +16,15 @@ angular.module("Day3App", [])
         $scope.addItem = function(){
 
             //form calidation goes here
-
             var newTeam = {};
             newTeam.name = $scope.teamNameInput;
             newTeam.city = $scope.cityInput;
             newTeam.isActive = $scope.teamIsActiveInput;
 
             //Pass tjhe new object to the service for safe keeping
-
             MyService.addItem(newTeam);
 
             //clean the form up for further use
-
             $scope.teamNameInput ='';
             $scope.cityInput='';
             $scope.teamIsActiveInput=false;

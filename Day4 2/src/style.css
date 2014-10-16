@@ -1,0 +1,27 @@
+/*==== Style Sheet =====*/
+body{
+	
+
+}
+header{
+	
+	width:100%;
+	background-color:red;
+
+}
+h1{
+	
+	float:left;
+	color:white;
+}
+#wrapper{
+	
+
+	width:960px;
+	margin:0 auto;
+
+}
+footer{
+
+	width:100%;
+}

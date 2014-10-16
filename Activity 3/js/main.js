@@ -1,36 +1,37 @@
 /**
  * Created by wsdrees on 10/15/14.
  */
-angular.module('employeeApp',['ngRoute'])
+angular.module('RecipeApp',['ngRoute'])
     .config(function($routeProvider){
         $routeProvider
 
+        console.log("hello");
 
             .when('/home',{
-                templateUrl: 'employeelist.html',
+                templateUrl: 'list.html',
                 controller: 'HomeController'
-   
+        console.log("hello1");
 
             })
 
             .when('/form',{
-                templateUrl: 'employeeForm.html',
+                templateUrl: 'form.html',
                 controller: 'FormController'
-    
+        console.log("hello2");
 
             })
 
             .when('/details/:recipeIdx',{
-                templateUrl: 'employeeDetails.html',
+                templateUrl: 'details.html',
                 controller: 'DetailController'
-       
+        console.log("hello3");
 
             })
 
             .when('/edit/:recipeIdx',{
-                templateUrl: 'employeeForm.html',
+                templateUrl: 'form.html',
                 controller: 'EditController'
- 
+        console.log("hello4");
 
             })
 

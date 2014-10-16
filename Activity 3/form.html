@@ -1,0 +1,37 @@
+<form ng-submit="onSubmit()" id="recipeForm">
+    <label for="ingredient1">
+        Recipe Name
+        <input id="ingredient1" type="text" ng-model="recipeInput.name"/>
+    </label>
+    <label for="ingredient2">
+        Ingredient 1:
+        <input id="ingredient2" type="text" ng-model="recipeInput.ingredient1"/>
+    </label>
+    <label for="ingredient3">
+        Ingredient 2:
+        <input id="ingredient3" type="text" ng-model="recipeInput.ingredient2"/>
+    </label>
+    <label for="ingredient4">
+        Ingredient 3:
+        <input id="ingredient4" type="text" ng-model="recipeInput.ingredient3"/>
+    </label>
+    <label for="ingredient5">
+        Ingredient 4:
+        <input id="ingredient5" type="text" ng-model="recipeInput.ingredient4"/>
+    </label>
+    <label for="ingredient6">
+        Ingredient 5:
+        <input id="ingredient6" type="text" ng-model="recipeInput.ingredient5"/>
+    </label>
+    <label for="ingredient7">
+        Ingredient 6:
+        <input id="ingredient7" type="text" ng-model="recipeInput.ingredient6"/>
+    </label>
+
+    <label>
+        Directions:
+        <textarea name="notes" id="" cols="50" rows="10" form="recipeForm" ng-model="recipeInput.directions"></textarea>
+    </label>
+
+    <button type="submit" class="submit">Save</button>
+</form>

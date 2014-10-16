@@ -1,0 +1,10 @@
+<h1>This is my first view! LOL</h1>
+
+        <ul>
+            <li ng-repeat="film in filmArray track by $index">
+                <a href="#/detail/{{ $index }}">{{ film.title }}</a> -
+               ( {{ film.releaseYear }} ) - {{ film.rating }}
+                <a href="#/edit/{{$index}}">Edit</a>
+            </li>
+
+        </ul>

@@ -1,0 +1,18 @@
+/*==== Style Sheet =====*/
+body{
+	
+
+}
+header{
+	
+	width:100%;
+	background-color:red;
+
+}
+#wrapper{
+	
+
+	width:960px;
+	margin:0 auto;
+
+}

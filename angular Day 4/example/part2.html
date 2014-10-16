@@ -1,0 +1,30 @@
+<h1>This is my second file LOL</h1>
+
+        <form ng-submit="">
+            <p>
+            <label for="titleTxt">
+                Title:
+                <input id="titleTxt" type="text" ng-model="filmInput.title" />
+            </label>
+                </p>
+            <p>
+            <label for="releaseTxt">
+                Year of Release:
+                <input id="releaseTxt" type="text" ng-model="filmInput.releaseYear" />
+            </label>
+                </p>
+            <p>
+            <label for="ratingSel">
+                Rating:
+                <select id="ratingSel" ng-model="filmInput.rating">
+                    <option value="G">G</option>
+                    <option value="PG">PG</option>
+                    <option value="PG13">PG13</option>
+                    <option value="R">R</option>
+                    <option value="NC17">NC17</option>
+                    <option value="Porn">Porn</option>
+                </select>
+            </label>
+        </p>
+            <button type="submit">Moviez yo +</button>
+        </form>
