@@ -22,14 +22,14 @@ angular.module('employeeApp',['ngRoute'])
 
             })
 
-            .when('/details/:recipeIdx',{
+            .when('/details/:employeeIdx',{
                 templateUrl: 'employeeDetails.html',
                 controller: 'DetailController'
        
 
             })
 
-            .when('/edit/:recipeIdx',{
+            .when('/edit/:employeeIdx',{
                 templateUrl: 'employeeForm.html',
                 controller: 'EditController'
  

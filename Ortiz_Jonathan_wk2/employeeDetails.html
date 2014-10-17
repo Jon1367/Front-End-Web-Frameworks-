@@ -2,10 +2,14 @@
 <div id="details">
 <h1> EmployeeName: {{ theEmployee.name }}</h1>
 <p>Email: {{theEmployee.email}}</p>
+<p>PhoneNumber: {{theEmployee.phoneNumber}}</p>
+<p>Adress: {{theEmployee.adress}}</p>
 
 
 
-<a href="#/edit/{{employeeIndex}}">Edit Recipe</a>
-<button ng-click="removeEmployee($index)">Remove Recipe</button>
+
+
+<a href="#/edit/{{employeeIndex}}">Edit Employee</a>
+<button ng-click="removeEmployee($index)">Remove Employee</button>
 
  </div>
