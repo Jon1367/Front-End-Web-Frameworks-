@@ -5,10 +5,16 @@ body{
 }
 a{
 	text-decoration:none;
+	color:white;
+}
+a:hover{
+
+background-color:#2471B8;
+
 }
 header{
 
-	background-color:navy;
+	background-color:#242AB8;
 }
 header > h1{
 
@@ -51,16 +57,24 @@ nav{
 }
 nav a{
 	
+	font-size:16px;
 	color:white;
 	text-decoration:none;
 
 }
 nav a:hover{
 
-	background-color:red;
+	font-size:16px;
+	background-color:#2471B8;
+	border-radius:5px;
 
 }
 label{
 
 	display:block;
+}
+#employeelist{
+
+
+	margin-left:150px;
 }

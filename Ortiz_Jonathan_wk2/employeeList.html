@@ -1,11 +1,10 @@
 
 <div id="employeelist">
-	<h1>Employee Book</h1>
+<h1>Employee Book</h1>
 
-	        <ul>
-	            <li ng-repeat="employeeInput in employeeArray track by $index">
-	             <a href="#/details/{{$index}}">{{employeeInput.name}}</a>
-	            </li>
-	        </ul>
-
-	</div>
+        <ul>
+            <li ng-repeat="employeeInput in employeeArray track by $index">
+                <a href="#/details/{{$index}}">{{employeeInput.name}}</a>
+            </li>
+        </ul>
+</div>

@@ -58,7 +58,7 @@ angular.module('employeeApp',['ngRoute'])
       
 
             EmployeeService.addEmployee($scope.employeeInput);
-        
+            //Clear the fields after submitting recipe
             $scope.employeeInput= {};
 
              console.log("Hello3");
@@ -89,11 +89,11 @@ angular.module('employeeApp',['ngRoute'])
 
             EmployeeService.updateEmployeeAt($routeParams.employeeIdx,$scope.employeeInput);
 
-    
+            //Return to details page
             document.location.hash='#/details'+$routeParams.employeeIdx;
         };
 
-
+        //Remove the recipe
         $scope.removeEmployee = function(employeeIndex){
              console.log("Hello7");
 
@@ -135,9 +135,10 @@ angular.module('employeeApp',['ngRoute'])
         };
 
         this.addEmployee = function(employeeObject){
-          
+            
             employeeArray.push(employeeObject);
 
+            
             var stringyData=JSON.stringify(employeeArray);
             localStorage.setItem('MyLocalData',stringyData);
              console.log("Hello10");
@@ -146,7 +147,7 @@ angular.module('employeeApp',['ngRoute'])
         this.updateEmployeeAt = function(employeeIndex, employeeObject){
             employeeArray.splice(employeeIndex,1,employeeObject);
 
-   
+           
             var stringyData=JSON.stringify(employeeArray);
             localStorage.setItem('MyLocalData',stringyData);
              console.log("Hello11");
@@ -155,7 +156,7 @@ angular.module('employeeApp',['ngRoute'])
         this.removeEmployee = function(employeeIndex){
             employeeArray.splice(employeeIndex,1);
 
- 
+           
             var stringyData=JSON.stringify(employeeArray);
             localStorage.setItem('MyLocalData',stringyData);
              console.log("Hello12");
