@@ -6,6 +6,8 @@ angular.module('employeeApp',['ngRoute'])
         $routeProvider
 
 
+
+
             .when('/home',{
                 templateUrl: 'employeelist.html',
                 controller: 'HomeController'
@@ -41,111 +43,125 @@ angular.module('employeeApp',['ngRoute'])
 
     //======================== Controllers =========================
 
-    .controller('HomeController', function($scope,RecipeService){
-        console.log("hello5");
+    .controller('HomeController', function($scope,EmployeeService){
+        
+                console.log("Hello");
 
-        $scope.recipeArray=RecipeService.getRecipe();
+        $scope.employeeArray=EmployeeService.getEmployee();
+
     })
 
-    .controller('FormController',function($scope,RecipeService){
-        console.log("hello6");
+    .controller('FormController',function($scope,EmployeeService){
 
-        $scope.recipeInput={};
+        $scope.employeeInput={};
+
+         console.log("Hello2");
 
         $scope.onSubmit = function(){
-        console.log("hello7");
+      
 
-            RecipeService.addRecipe($scope.recipeInput);
+            EmployeeService.addEmployee($scope.employeeInput);
             //Clear the fields after submitting recipe
-            $scope.recipeInput= {};
+            $scope.employeeInput= {};
+
+             console.log("Hello3");
         }
     })
 
-    .controller("DetailController",function($scope,$routeParams,RecipeService){
-        console.log("hello8");
+    .controller("DetailController",function($scope,$routeParams,EmployeeService){
+        console.log("hello4");
 
 
-        $scope.recipeIndex = $routeParams.recipeIdx;
-        $scope.theRecipe  = RecipeService.getRecipeAt($routeParams.recipeIdx);
+        $scope.employeeIndex = $routeParams.employeeIdx;
+        $scope.theEmployee  = EmployeeService.getEmployeeAt($routeParams.employeeIdx);
 
-        $scope.removeRecipe = function(recipeIndex){
-            RecipeService.removeRecipe(recipeIndex);
+        $scope.removeEmployee = function(employeeIndex){
+            EmployeeService.removeEmployee(employeeIndex);
         };
 
     })
 
-    .controller('EditController',function($scope,RecipeService,$routeParams){
-        $scope.employeeInput=RecipeService.getRecipeAt($routeParams.recipeIdx);
+    .controller('EditController',function($scope,EmployeeService,$routeParams){
+        $scope.employeeInput=EmployeeService.getEmployeeAt($routeParams.employeeIdx);
 
-        console.log("hello9");
+        console.log("hello5");
 
 
         $scope.onSubmit=function(){
-            RecipeService.updateRecipeAt($routeParams.recipeIdx,$scope.recipeInput);
+             console.log("Hello6");
+
+            EmployeeService.updateEmployeeAt($routeParams.employeeIdx,$scope.employeeInput);
 
             //Return to details page
-            document.location.hash='#/details'+$routeParams.recipeIdx;
+            document.location.hash='#/details'+$routeParams.employeeIdx;
         };
 
         //Remove the recipe
-        $scope.removeRecipe = function(recipeIndex){
-            RecipeService.removeRecipe(recipeIndex);
+        $scope.removeEmployee = function(employeeIndex){
+             console.log("Hello7");
+
+            EmployeeService.removeEmployee(employeeIndex);
 
             //Return to list page
-            document.location.hash='#/list'+$routeParams.recipeIdx;
+            document.location.hash='#/list'+$routeParams.employeeIdx;
         }
     })
 
 
     //======================== Services =========================
 
-    .service('RecipeService', function(){
+    .service('EmployeeService', function(){
 
-        var recipeArray = [];
+        var employeeArray = [];
 
-        this.getRecipe = function(){
+        this.getEmployee = function(){
             //Load data from Local Storage
             var lsData=localStorage.getItem('MyLocalData');
 
             //If successful, use that data. Otherwise use recipeArray
             try{
-                recipeArray=JSON.parse(lsData);
+                employeeArray=JSON.parse(lsData);
             }catch(e){
 
             }
-            return recipeArray;
+            return employeeArray;
+             console.log("Hello8");
         };
 
-        this.getRecipeAt = function(recipeIndex){
+        this.getEmployeeAt = function(employeeIndex){
             //Make sure the latest data is from Local Storage
-            this.getRecipe();
+            this.getEmployee();
 
-            return recipeArray[recipeIndex];
+            return employeeArray[employeeIndex];
+             console.log("Hello9");
         };
 
-        this.addRecipe = function(recipeObject){
+        this.addEmployee = function(employeeObject){
             //Add recipe to array
-            recipeArray.push(recipeObject);
+            employeeArray.push(employeeObject);
 
             //Commit changes to Local Storage
-            var stringyData=JSON.stringify(recipeArray);
+            var stringyData=JSON.stringify(employeeArray);
             localStorage.setItem('MyLocalData',stringyData);
+             console.log("Hello10");
         };
 
-        this.updateRecipeAt = function(recipeIndex, recipeObject){
-            recipeArray.splice(recipeIndex,1,recipeObject);
+        this.updateEmployeeAt = function(employeeIndex, employeeObject){
+            employeeArray.splice(employeeIndex,1,employeeObject);
 
             //Commit changes to Local Storage
-            var stringyData=JSON.stringify(recipeArray);
+            var stringyData=JSON.stringify(employeeArray);
             localStorage.setItem('MyLocalData',stringyData);
+             console.log("Hello11");
         };
 
-        this.removeRecipe = function(recipeIndex){
-            recipeArray.splice(recipeIndex,1);
+        this.removeEmployee = function(employeeIndex){
+            employeeArray.splice(employeeIndex,1);
 
             //Commit changes to Local Storage
-            var stringyData=JSON.stringify(recipeArray);
+            var stringyData=JSON.stringify(employeeArray);
             localStorage.setItem('MyLocalData',stringyData);
+             console.log("Hello12");
         }
 
 
