@@ -1,12 +1,9 @@
-/**
- * Created by wsdrees on 10/15/14.
- */
+/* Created By J.E Ortiz */
 angular.module('employeeApp',['ngRoute'])
     .config(function($routeProvider){
         $routeProvider
 
-
-
+            //routes
 
             .when('/home',{
                 templateUrl: 'employeelist.html',
@@ -41,7 +38,7 @@ angular.module('employeeApp',['ngRoute'])
             })
     })
 
-    //======================== Controllers =========================
+    /* Controllers */
 
     .controller('HomeController', function($scope,EmployeeService){
         
@@ -61,7 +58,7 @@ angular.module('employeeApp',['ngRoute'])
       
 
             EmployeeService.addEmployee($scope.employeeInput);
-            //Clear the fields after submitting recipe
+        
             $scope.employeeInput= {};
 
              console.log("Hello3");
@@ -92,11 +89,11 @@ angular.module('employeeApp',['ngRoute'])
 
             EmployeeService.updateEmployeeAt($routeParams.employeeIdx,$scope.employeeInput);
 
-            //Return to details page
+    
             document.location.hash='#/details'+$routeParams.employeeIdx;
         };
 
-        //Remove the recipe
+
         $scope.removeEmployee = function(employeeIndex){
              console.log("Hello7");
 
@@ -108,17 +105,18 @@ angular.module('employeeApp',['ngRoute'])
     })
 
 
-    //======================== Services =========================
+   /*  Service */
 
     .service('EmployeeService', function(){
 
         var employeeArray = [];
 
         this.getEmployee = function(){
-            //Load data from Local Storage
+
+            /*Load from Local Storage*/
             var lsData=localStorage.getItem('MyLocalData');
 
-            //If successful, use that data. Otherwise use recipeArray
+            
             try{
                 employeeArray=JSON.parse(lsData);
             }catch(e){
@@ -129,7 +127,7 @@ angular.module('employeeApp',['ngRoute'])
         };
 
         this.getEmployeeAt = function(employeeIndex){
-            //Make sure the latest data is from Local Storage
+            
             this.getEmployee();
 
             return employeeArray[employeeIndex];
@@ -137,10 +135,9 @@ angular.module('employeeApp',['ngRoute'])
         };
 
         this.addEmployee = function(employeeObject){
-            //Add recipe to array
+          
             employeeArray.push(employeeObject);
 
-            //Commit changes to Local Storage
             var stringyData=JSON.stringify(employeeArray);
             localStorage.setItem('MyLocalData',stringyData);
              console.log("Hello10");
@@ -149,7 +146,7 @@ angular.module('employeeApp',['ngRoute'])
         this.updateEmployeeAt = function(employeeIndex, employeeObject){
             employeeArray.splice(employeeIndex,1,employeeObject);
 
-            //Commit changes to Local Storage
+   
             var stringyData=JSON.stringify(employeeArray);
             localStorage.setItem('MyLocalData',stringyData);
              console.log("Hello11");
@@ -158,7 +155,7 @@ angular.module('employeeApp',['ngRoute'])
         this.removeEmployee = function(employeeIndex){
             employeeArray.splice(employeeIndex,1);
 
-            //Commit changes to Local Storage
+ 
             var stringyData=JSON.stringify(employeeArray);
             localStorage.setItem('MyLocalData',stringyData);
              console.log("Hello12");
