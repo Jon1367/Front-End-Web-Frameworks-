@@ -1,13 +1,66 @@
 body{
 
+	margin:0;
+
+}
+a{
+	text-decoration:none;
 }
 header{
 
-	background-color:red;
+	background-color:navy;
 }
 header > h1{
 
+	font-size:18px;
+	font-style:italic;
+	color:white;
+	text-align:center;
+	margin-top:0px;
+	padding:8px;
+	cursor:pointer;
 
-	color:blue;
 
+}
+#wrapper{
+
+	width:500px;
+	margin: 0 auto;
+	background-color:gray;
+	border-radius:5px;
+	border:2px solid blue;
+}
+#detail{
+
+	width:400px;
+	margin:0 auto;
+
+
+}
+form{
+
+	width:400px;
+	margin: 0 auto;
+}
+nav{
+
+	margin-left:150px;
+	margin-top:10px;
+	margin-bottom:20px;
+
+}
+nav a{
+	
+	color:white;
+	text-decoration:none;
+
+}
+nav a:hover{
+
+	background-color:red;
+
+}
+label{
+
+	display:block;
 }

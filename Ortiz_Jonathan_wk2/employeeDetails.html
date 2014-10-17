@@ -1,15 +1,14 @@
 
-<div id="details">
-<h1> EmployeeName: {{ theEmployee.name }}</h1>
-<p>Email: {{theEmployee.email}}</p>
-<p>PhoneNumber: {{theEmployee.phoneNumber}}</p>
-<p>Adress: {{theEmployee.adress}}</p>
+<div id="detail">
 
+<!-- Employee info  -->
+	<h1> EmployeeName: {{ theEmployee.name }}</h1>
+	<p>Email: {{theEmployee.email}}</p>
+	<p>PhoneNumber: {{theEmployee.phoneNumber}}</p>
+	<p>Adress: {{theEmployee.adress}}</p>
 
+<!-- Employee Options  -->
+	<a href="#/edit/{{employeeIndex}}">Edit Employee</a>
+	<button ng-click="removeEmployee($index)">Remove Employee</button>
 
-
-
-<a href="#/edit/{{employeeIndex}}">Edit Employee</a>
-<button ng-click="removeEmployee($index)">Remove Employee</button>
-
- </div>
+ </div><!-- End Of Detials -->
