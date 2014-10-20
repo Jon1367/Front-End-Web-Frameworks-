@@ -5,7 +5,7 @@ angular.module('RecipeApp',['ngRoute'])
     .config(function($routeProvider){
         $routeProvider
 
-        console.log("hello");
+   
 
             .when('/home',{
                 templateUrl: 'list.html',
@@ -17,21 +17,21 @@ angular.module('RecipeApp',['ngRoute'])
             .when('/form',{
                 templateUrl: 'form.html',
                 controller: 'FormController'
-        console.log("hello2");
+  
 
             })
 
             .when('/details/:recipeIdx',{
                 templateUrl: 'details.html',
                 controller: 'DetailController'
-        console.log("hello3");
+   
 
             })
 
             .when('/edit/:recipeIdx',{
                 templateUrl: 'form.html',
                 controller: 'EditController'
-        console.log("hello4");
+     
 
             })
 
@@ -76,7 +76,7 @@ angular.module('RecipeApp',['ngRoute'])
     })
 
     .controller('EditController',function($scope,RecipeService,$routeParams){
-        $scope.employeeInput=RecipeService.getRecipeAt($routeParams.recipeIdx);
+        $scope.recipeInput=RecipeService.getRecipeAt($routeParams.recipeIdx);
 
         console.log("hello9");
 

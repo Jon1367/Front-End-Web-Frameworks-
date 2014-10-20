@@ -1,0 +1,8 @@
+<h1> Treat List</h1>
+
+
+        <ul>
+            <li ng-repeat="candyInput in candyArray track by $index">
+                <a href="#/details/{{$index}}">{{candyInput.name}}</a>
+            </li>
+        </ul>
